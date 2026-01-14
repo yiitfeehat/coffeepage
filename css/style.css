@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Ruge+Boogie&family=Sixtyfour+Convergence&display=swap');
 
 :root {
-    --primary-color: #bc6c25;
-    --secondary-color: #F5E3C3;
-    --hover-color: rgb(245, 133, 133);
-    --section-color: #6F4E37;
-    --section2-color: #3E2723;
-    --arkaplan-color: #FFF8E7;
-
+    --primary-color: #2C1A1D;
+    /* Dark Espresso */
+    --secondary-color: #D4A373;
+    /* Latte Gold */
+    --hover-color: #E6BE8A;
+    /* Light Gold */
+    --section-color: #4A3C31;
+    /* Deep Brown */
+    --section2-color: #1F1416;
+    /* Almost Black */
+    --arkaplan-color: #FAF9F6;
+    /* Crema White */
 }
 
 * {
@@ -26,17 +31,18 @@
 }
 
 .navbar .container {
-    background-color: rgba(245, 133, 133, 0.87);
+    background-color: rgba(74, 60, 49, 0.95);
+    /* Deep Brown with opacity */
     text-transform: capitalize;
     font-weight: bold;
 }
 
 .nav-link {
-    color: white !important;
+    color: var(--secondary-color) !important;
 }
 
 .nav-link:hover {
-    color: var(--section-color) !important;
+    color: var(--hover-color) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -52,20 +58,24 @@
 }
 
 .carousel-caption .btn {
-    background-color: var(--hover-color);
+    background-color: var(--secondary-color);
     border: none;
     width: 10rem;
     font-weight: bold;
     white-space: nowrap;
-    color: white;
+    color: var(--section2-color);
 }
 
 .carousel-caption .btn:first-child {
     background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
 }
 
 .carousel-caption .btn:first-child:hover {
-    background-color: var(--primary-color);
+    background-color: var(--hover-color);
+    color: var(--section2-color);
+    border-color: var(--hover-color);
 }
 
 .carousel-caption {
@@ -78,7 +88,8 @@
 }
 
 .black {
-    background-color: #6f4e37e9;
+    background-color: rgba(31, 20, 22, 0.9);
+    /* Almost Black with opacity */
     width: 450px;
     height: 500px;
     position: absolute;
@@ -93,7 +104,7 @@
 }
 
 .carousel-indicators button {
-    background-color: var(--section2-color) !important;
+    background-color: var(--secondary-color) !important;
     padding: 0.2rem !important;
     width: 3rem !important;
 }
@@ -104,8 +115,7 @@
 
 section#about {
     background-color: var(--section-color);
-
-    color: rgb(191, 191, 191);
+    color: var(--arkaplan-color);
 }
 
 .image-container {
@@ -122,15 +132,17 @@ section#about {
     left: 0;
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(to bottom, rgba(23, 108, 131, 0.388), rgba(188, 93, 4, 0.639))
+    background: linear-gradient(to bottom, rgba(44, 26, 29, 0.4), rgba(212, 163, 115, 0.8));
 }
 
 section#about .btn {
-    background-color: var(--hover-color);
+    background-color: var(--secondary-color);
+    color: var(--section2-color);
+    font-weight: bold;
 }
 
 section#about {
-    color: var(--secondary-color);
+    color: var(--arkaplan-color);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -140,29 +152,28 @@ section#about {
 /* -------------------------------------------------------------------------- */
 
 section#people {
-    background-color: #bc6c25;
-    /* height: 700px; */
-    background-color: var(--secondary-color);
+    background-color: var(--arkaplan-color);
     padding: 2rem 1rem;
 
 }
 
 section#people .container {
-    background-color: var(--section-color);
-    padding: 2rem 1rem;
+    background-color: transparent;
+    padding: 0;
     margin-top: 2rem;
-
 }
 
 section#people .card {
-    background-color: var(--secondary-color);
+    background-color: #fff;
+    border: 1px solid var(--hover-color);
     transition: all 0.5s;
     overflow: hidden;
     /* margin-bottom: 1rem; */
 }
 
 section#people .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 section#people .card img {
@@ -170,15 +181,17 @@ section#people .card img {
 }
 
 section#people .card img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 section#people .card i {
     transition: all 0.3s;
+    color: var(--primary-color);
 }
 
 section#people .card i:hover {
-    opacity: 0.5;
+    opacity: 0.7;
+    color: var(--hover-color);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -186,27 +199,65 @@ section#people .card i:hover {
 
 section#menu {
     background-color: var(--section-color);
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 section#menu .container {
-    background-color: rgba(229, 118, 118, 0.89);
-    /* border-radius: 30px; */
+    background-color: rgba(31, 20, 22, 0.4);
     padding: 1.2rem 1.5rem;
-    color: wheat;
+    color: var(--arkaplan-color);
+    border: 1px solid var(--section2-color);
 }
 
 section#menu h2 {
     margin-bottom: 2.4rem;
+    color: var(--hover-color);
 }
 
-section#menu button {
-    background-color: var(--section-color);
+/* Fix for Bootstrap Nav Pills in Menu */
+section#menu .nav-pills .nav-link {
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color) !important;
     margin-right: 0.5rem;
+    transition: all 0.3s;
+}
+
+section#menu .nav-pills .nav-link.active,
+section#menu .nav-pills .show>.nav-link {
+    background-color: var(--secondary-color) !important;
+    color: var(--section2-color) !important;
+    border-color: var(--secondary-color);
+}
+
+section#menu .nav-pills .nav-link:hover:not(.active) {
+    background-color: rgba(212, 163, 115, 0.2);
+    border-color: var(--hover-color);
+    color: var(--hover-color) !important;
 }
 
 .img-thumbnail {
-    border:0.3rem solid var(--section-color) !important;
+    border: none !important;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.img-thumbnail:hover {
+    transform: scale(1.02);
+}
+
+/* Hero Button Link Contrast Fix */
+.carousel-caption .btn a {
+    color: inherit !important;
+    text-decoration: none;
+    padding: 0;
+    display: block;
+}
+
+.carousel-caption .btn:first-child:hover a {
+    color: var(--section2-color) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -215,32 +266,39 @@ section#menu button {
 
 section#contact {
     /* height: 700px; */
-    background: linear-gradient(to bottom, #6f4e37 5%, rgba(229, 118, 118, 0.628) 60%, #6F4E37),
-        url(../img/slider1.jpg)
+    background: linear-gradient(to bottom, rgba(74, 60, 49, 0.95), rgba(31, 20, 22, 0.95)),
+        url(../img/slider1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
-section#contact .contact-header{
+
+section#contact .contact-header {
     margin-top: -2rem !important;
     margin-bottom: 1rem !important;
 }
 
 
 section#contact input,
-section#color textarea {
-    background-color: inherit !important;
+section#contact textarea {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid var(--secondary-color);
+    color: var(--arkaplan-color) !important;
 }
 
 section#contact input:focus,
-section#color textarea:focus {
-    background-color: var(--section-color) !important;
-    color: var(--hover-color);
+section#contact textarea:focus {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--arkaplan-color);
+    box-shadow: 0 0 10px rgba(212, 163, 115, 0.3);
+    border-color: var(--hover-color);
 }
 
 input::placeholder {
-    color: wheat !important;
+    color: rgba(250, 249, 246, 0.6) !important;
 }
 
 section#contact label {
-    color: var(--hover-color) !important;
+    color: var(--secondary-color) !important;
 }
 
 .comments {
@@ -250,17 +308,29 @@ section#contact label {
 }
 
 .google-map {
-    filter: blur(0.09rem) grayscale(80%);
+    filter: grayscale(100%) contrast(1.2);
     border-radius: 1.5rem;
+    border: 2px solid var(--secondary-color);
 }
 
 .google-map:hover {
-    filter: none;
+    filter: grayscale(0%);
 }
 
 /* --------------------------------- footer --------------------------------- */
 
-footer{
-    background-color: #6F4E37;
-    color: rgb(254, 152, 152);
+footer {
+    background-color: var(--section2-color);
+    color: var(--secondary-color);
+    border-top: 5px solid var(--section-color);
+}
+
+footer a {
+    color: var(--hover-color) !important;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: var(--arkaplan-color) !important;
 }
